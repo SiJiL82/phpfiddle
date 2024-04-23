@@ -15,15 +15,14 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['code'] = trim($_POST['code']);
     $code = trim($_POST['code']);
-    $hasStartPHPTag = strtolower(substr($code, 0, 5)) == '<?php';
-    $hasEndPHPTag = substr($code, -2) == '?>';
+
     $usePrettyPrint = filter_var($_POST['usePrettyPrint'], FILTER_VALIDATE_BOOLEAN);
 
-    if ($hasStartPHPTag) {
+    if (strtolower(substr($code, 0, 5)) == '<?php') {
         $code = substr($code, 5);
     }
 
-    if ($hasEndPHPTag) {
+    if (substr($code, -2) == '?>') {
         $code = substr($code, 0, strlen($code) - 2);
     }
 
