@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Lato', sans-serif;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #DDDDDD;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+#header {
+  height: auto;
+  padding: 5px 20px;
+}
+
+#header_upper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#header_lower {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+
+#run {
+  flex: 1 100%;
+  text-align: left;
+}
+
+.run_highlight {
+  font-weight: bold;
+  color: #000;
+  background-color: #f5f5dc;
+  border: 1px solid #ccc;
+  padding: 2px;
+  font-family: Arial, sans-serif;
+}
+
+#separator {
+  cursor: pointer;
+}
+
+#instructions {
+  flex: 3 100%;
+  text-align: center;
+}
+
+#execution-time {
+  flex: 1 100%;
+  text-align: center;
+}
+
+#snippets {
+  flex: 1 100%;
+  text-align: left;
+}
+
+#options {
+  flex: 1 100%;
+  text-align: center;
+}
+
+#code-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+#code {
+  width: 50%;
+  background-color: white;
+}
+
+#console {
+  width:50%;
+  background-color: #333333;
+  color: white;
+  border: none;
+  overflow-y: scroll;
+}
+
+input:where([type="checkbox"][role="switch"]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  font-size: inherit;
+  width: 2em;
+  height: 1em;
+  box-sizing: content-box;
+  border: 1px solid;
+  vertical-align: text-bottom;
+  margin: auto;
+}
+
+input:where([type="checkbox"][role="switch"])::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  transition: .3s ease;
+  box-sizing: border-box;
+  width: 0.7em;
+  height: 0.7em;
+  margin: 0 0.15em;
+  border: 1px solid;
+  background-color: #E81B1B;
+}
+
+input:where([type="checkbox"][role="switch"]):checked::before {
+  left: 1em;
+  background-color: #009068;
+}
+
+input:where([type="checkbox"][role="toggle"]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  font-size: inherit;
+  width: 2em;
+  height: 1em;
+  box-sizing: content-box;
+  border: none;
+  vertical-align: text-bottom;
+  margin: auto;
+}
+
+input:where([type="checkbox"][role="toggle"])::before {
+  content: "◀";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  transform: translate(0, -50%);
+  transition: .3s ease;
+  box-sizing: border-box;
+  width: 0.7em;
+  height: 0.7em;
+  margin: 0 0.15em;
+  border: none;
+}
+
+input:where([type="checkbox"][role="toggle"]):checked::before {
+  content: "▶";
+  left: 1em;
+}
